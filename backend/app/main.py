@@ -1,25 +1,24 @@
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 
-from .models import SCRRequest
-from .calculator import calculate_scr
+from calculations import calculate_scr
 
 
 app = FastAPI()
 
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+class SCRRequest(BaseModel):
+    voltage: float
+    power: float
+    xr: float
+    frequency: float
 
 
 @app.get("/")
 def root():
-    return {"message": "Backend is running"}
+    return {
+        "message": "Backend running"
+    }
 
 
 @app.post("/calculate")
