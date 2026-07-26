@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Stability Toolkit</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Grid Stability Toolkit</h1>
+
+        <label>Voltage (kV)</label>
+        <input type="number" id="voltage">
+
+        <label>Rated Power (MVA)</label>
+        <input type="number" id="power">
+
+        <label>X/R Ratio</label>
+        <input type="number" id="xr">
+
+        <label>Frequency (Hz)</label>
+        <input type="number" id="frequency" value="50">
+
+        <button onclick="calculate()">
+            Calculate
+        </button>
+
+        <h2>Results</h2>
+
+        <p>SCR: <span id="scr">-</span></p>
+        <p>Z: <span id="z">-</span></p>
+        <p>R: <span id="r">-</span></p>
+        <p>X: <span id="x">-</span></p>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
