@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 
-from calculator import calculate_scr
+from app.calculator import calculate_scr
 
 
 app = FastAPI()
