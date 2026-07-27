@@ -8,7 +8,7 @@ async function calculate() {
 
 
     const response = await fetch(
-        "http://127.0.0.1:8000/calculate",
+        "https://demo-api-33k5.onrender.com/calculate",
         {
             method: "POST",
 
