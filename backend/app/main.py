@@ -34,12 +34,18 @@ def root():
 @app.post("/calculate")
 def calculate(request: SCRRequest):
 
-    result = calculate_scr(
-        request.voltage,
-        request.power,
-        request.xr,
-        request.frequency,
-        request.ssc
-    )
+    try:
+        result = calculate_scr(
+            request.voltage,
+            request.power,
+            request.xr,
+            request.frequency,
+            request.ssc
+        )
 
-    return result
+        return result
+
+    except Exception as e:
+        return {
+            "error": str(e)
+        }
