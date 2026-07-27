@@ -1,1 +1,9 @@
-
+Per fare server locale:
+- mi sposto nella cd app (dove sta il main)
+- devo avere installato:
+pip install fastapi uvicorn
+chck: pip show fastapi
+      pip show uvicorn
+- applico python -m uvicorn main:app --reload
+- poi apro index.html con LiveScript al scerver
+- guardo nel terminal powershell tutte le richieste che arrivano al server

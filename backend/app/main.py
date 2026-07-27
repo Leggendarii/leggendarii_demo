@@ -1,10 +1,20 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
 
-from calculations import calculate_scr
+from calculator import calculate_scr
 
 
 app = FastAPI()
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 class SCRRequest(BaseModel):
@@ -12,6 +22,7 @@ class SCRRequest(BaseModel):
     power: float
     xr: float
     frequency: float
+    ssc: float
 
 
 @app.get("/")
@@ -28,7 +39,8 @@ def calculate(request: SCRRequest):
         request.voltage,
         request.power,
         request.xr,
-        request.frequency
+        request.frequency,
+        request.ssc
     )
 
     return result
