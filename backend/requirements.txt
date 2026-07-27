@@ -4,6 +4,6 @@ Per fare server locale:
 pip install fastapi uvicorn
 chck: pip show fastapi
       pip show uvicorn
-- applico python -m uvicorn main:app --reload
-- poi apro index.html con LiveScript al scerver
+- applico dentro power shell: python -m uvicorn main:app --reload
+- poi apro index.html con LiveScript al server
 - guardo nel terminal powershell tutte le richieste che arrivano al server
