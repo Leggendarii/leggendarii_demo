@@ -30,10 +30,6 @@ def root():
     }
 
 
-@app.options("/calculate")
-def calculate_options():
-    return {}
-
 
 @app.post("/calculate")
 def calculate(request: SCRRequest):
